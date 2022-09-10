@@ -1,6 +1,7 @@
 import express from 'express'
 import router from '~/router'
 import { initializeEta } from '~/vendors'
+import { config as configDotEnv } from 'dotenv'
 
 class App {
   public app: express.Application
@@ -14,6 +15,7 @@ class App {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.initializeVendors()
+    configDotEnv()
     return this
   }
 
@@ -24,7 +26,7 @@ class App {
 
   listen(): express.Application {
     // TODO: handle errors
-    this.app.listen(3000, () => {})
+    this.app.listen(process.env.PORT || 3000, () => {})
 
     return this.app
   }
