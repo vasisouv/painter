@@ -1,0 +1,18 @@
+<mjml>
+  <mj-head>
+    <mj-title><% = d._meta && d._meta.title %></mj-title>
+    <!-- Styles -->
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"/>
+      <mj-text font-weight="400" font-size="16px" color="#343a40" line-height="19.5px"/>
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#e6e6e6">
+    <!-- Header -->
+    <% ~ includeFile('layout/header.mjml', d) %>
+    <!-- Body -->
+    <% ~ d.body %>
+    <!-- Footer -->
+    <% ~ includeFile('layout/footer.mjml', d) %>
+  </mj-body>
+</mjml>
