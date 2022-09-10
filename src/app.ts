@@ -16,6 +16,8 @@ class App {
     this.app.use(express.urlencoded({ extended: true }))
     this.initializeVendors()
     configDotEnv()
+    // TODO: add error middleware here
+
     return this
   }
 
@@ -25,8 +27,10 @@ class App {
   }
 
   listen(): express.Application {
-    // TODO: handle errors
-    this.app.listen(process.env.PORT || 3000, () => {})
+    const port = process.env.PORT || 3000
+    this.app.listen(port, () => {
+      console.log(`Listening on http://localhost:${port}`)
+    })
 
     return this.app
   }
