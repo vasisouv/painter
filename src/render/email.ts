@@ -8,7 +8,7 @@ export async function renderEmail(
 ): Promise<string> {
   try {
     const renderedEtaTemplate = await renderEtaTemplate(
-      `templates/${templatePath}.mjml`,
+      `/templates/${templatePath}.mjml`,
       payload
     )
     if (!renderedEtaTemplate) {

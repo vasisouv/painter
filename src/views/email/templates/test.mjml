@@ -1,8 +1,0 @@
-<% layout('layout/base.mjml') %>
-<mj-section css-class="card">
-  <mj-column>
-    <mj-text>
-      <% = d.text %>
-    </mj-text>
-  </mj-column>
-</mj-section>

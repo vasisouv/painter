@@ -1,6 +1,5 @@
 <mjml>
   <mj-head>
-    <mj-title><% = d._meta && d._meta.title %></mj-title>
     <!-- Styles -->
     <mj-attributes>
       <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"/>
