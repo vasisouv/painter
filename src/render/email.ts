@@ -1,6 +1,7 @@
 import { renderFile as renderEtaTemplate } from 'eta'
 import renderMjmlTemplate from 'mjml'
 import { Payload } from '~/types'
+import { existsSync, readFileSync } from 'fs'
 
 export async function renderEmail(
   templatePath: string,
@@ -19,4 +20,17 @@ export async function renderEmail(
     error.message = `Failed to render ${templatePath} - ${error.message}`
     throw error
   }
+}
+
+export function renderEmailWithDummyData(
+  templatePath: string
+): Promise<string> {
+  let payload = {}
+  const dummyJsonFilePath = `src/views/email/templates/${templatePath}.json`
+  console.log('existsSync(dummyJsonFilePath)', existsSync(dummyJsonFilePath))
+  if (existsSync(dummyJsonFilePath)) {
+    // loads dummy .json file as payload
+    payload = JSON.parse(readFileSync(dummyJsonFilePath, 'utf-8'))
+  }
+  return renderEmail(templatePath, payload)
 }

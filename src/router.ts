@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
 // import { render, renderWithDummyData } from './render'
 import { createAsyncRoute } from '~/utils'
-import { renderEmail } from '~/render/email'
+import { renderEmail, renderEmailWithDummyData } from '~/render/email'
 import { BASE_API_PATH } from '~/constants'
 
 const router = express.Router()
@@ -10,7 +10,7 @@ const router = express.Router()
 router.get(
   `${BASE_API_PATH}/:templatePath(*)`,
   createAsyncRoute(async (req: Request, res: Response) =>
-    res.send(await renderEmail('example', {}))
+    res.send(await renderEmailWithDummyData('example'))
   )
 )
 
