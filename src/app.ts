@@ -1,7 +1,7 @@
 import express from 'express'
 import router from '~/router'
 import { initializeEta } from '~/vendors'
-import { config as configDotEnv } from 'dotenv'
+import { config as initializeDotEnv } from 'dotenv'
 
 class App {
   public app: express.Application
@@ -11,19 +11,18 @@ class App {
   }
 
   bootstrap(): App {
-    this.app.use(router)
-    this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: true }))
-    this.initializeVendors()
-    configDotEnv()
+    this.initializeRoutes()
+    initializeEta()
+    initializeDotEnv()
     // TODO: add error middleware here
 
     return this
   }
 
-  initializeVendors(): App {
-    initializeEta()
-    return this
+  initializeRoutes(): void {
+    this.app.use(express.json())
+    this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(router)
   }
 
   listen(): express.Application {

@@ -12,9 +12,6 @@ export async function renderEmail(
       `/templates/${templatePath}.mjml`,
       payload
     )
-    if (!renderedEtaTemplate) {
-      throw new Error(`Rendered empty template for ${templatePath}`)
-    }
     return renderMjmlTemplate(renderedEtaTemplate).html
   } catch (error) {
     error.message = `Failed to render ${templatePath} - ${error.message}`
@@ -27,7 +24,6 @@ export function renderEmailWithDummyData(
 ): Promise<string> {
   let payload = {}
   const dummyJsonFilePath = `src/views/email/templates/${templatePath}.json`
-  console.log('existsSync(dummyJsonFilePath)', existsSync(dummyJsonFilePath))
   if (existsSync(dummyJsonFilePath)) {
     // loads dummy .json file as payload
     payload = JSON.parse(readFileSync(dummyJsonFilePath, 'utf-8'))
