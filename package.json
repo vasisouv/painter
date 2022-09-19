@@ -15,6 +15,7 @@
     "eta": "^1.12.3",
     "express": "^4.18.1",
     "mjml": "^4.13.0",
+    "playwright": "^1.25.2",
     "swc": "^1.0.11"
   },
   "devDependencies": {

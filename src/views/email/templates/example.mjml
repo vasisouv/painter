@@ -1,4 +1,4 @@
-<% layout('layout/base.mjml') %>
+<% layout('email/layout/base.mjml') %>
 <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
   <mj-column>
     <mj-text align="center" font-weight="300" padding="30px 40px 10px 40px" font-size="32px" line-height="40px"

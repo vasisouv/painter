@@ -8,10 +8,10 @@
   </mj-head>
   <mj-body background-color="#e6e6e6">
     <!-- Header -->
-    <% ~ includeFile('layout/header.mjml', d) %>
+    <% ~ includeFile('email/layout/header.mjml', d) %>
     <!-- Body -->
     <% ~ d.body %>
     <!-- Footer -->
-    <% ~ includeFile('layout/footer.mjml', d) %>
+    <% ~ includeFile('email/layout/footer.mjml', d) %>
   </mj-body>
 </mjml>
