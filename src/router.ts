@@ -6,7 +6,7 @@ import {
 } from '~/utils'
 import { renderEmail, renderEmailWithDummyData } from '~/render/email'
 import { BASE_EMAIL_API_PATH, BASE_PDF_API_PATH, IS_DEV_ENV } from '~/constants'
-import { renderPdfWithDummyData } from '~/render/pdf'
+import { renderPdf, renderPdfWithDummyData } from '~/render/pdf'
 
 const router = express.Router()
 
@@ -32,6 +32,14 @@ router.post(
   createAsyncRoute(async (req: Request, res: Response) =>
     res.send(await renderEmail(getEmailTemplatePath(req.url), req.body))
   )
+)
+
+router.post(
+  `${BASE_PDF_API_PATH}/:templatePath(*)`,
+  createAsyncRoute(async (req: Request, res: Response) => {
+    res.setHeader('Content-Type', 'application/pdf')
+    return res.send(await renderPdf(getPdfTemplatePath(req.url), req.body))
+  })
 )
 
 export default router
