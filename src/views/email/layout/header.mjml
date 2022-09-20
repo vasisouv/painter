@@ -2,9 +2,16 @@
 </mj-section>
 <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
   <mj-column width="35%">
-    <mj-text align="left" font-size="20px" font-weight="500">// BR&amp;AND</mj-text>
+    <mj-text align="left" font-size="20px" font-weight="500">
+      <img style="width: 60px" src="https://vasisouv.gr/vs.png" alt="logo"></img>
+    </mj-text>
   </mj-column>
-  <mj-column width="65%">
-    <mj-text align="right" font-size="11px"><a href="#" style="color: #000000; text-decoration: none;">HOME</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a href="#" style="color: #000000; text-decoration: none;">SERVICE</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a href="#" style="color: #000000; text-decoration: none;">THIRD</a></mj-text>
+  <mj-column width="65%" padding-top="22px">
+    <mj-text align="right" font-size="20px">
+      Vasilis Souvatzis
+    </mj-text>
+    <mj-text padding-top="0" align="right" font-size="15px">
+      Software engineer
+    </mj-text>
   </mj-column>
 </mj-section>

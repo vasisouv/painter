@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "description": "Alcohol free beer",
+      "price": "15.00",
+      "quantity": 2
+    },
+    {
+      "description": "Coffee",
+      "price": "10.00",
+      "quantity": 4
+    },
+    {
+      "description": "Potato chips",
+      "price": "4.00",
+      "quantity": 5
+    }
+  ]
+}
